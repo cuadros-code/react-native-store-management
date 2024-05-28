@@ -1,10 +1,11 @@
-import { Text, View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import BottomNavigator from './presentation/routes/BottomNavigator'
 
 const App = () => {
   return (
-    <View>
-      <Text>Hola</Text>
-    </View>
+    <NavigationContainer>
+      <BottomNavigator />
+    </NavigationContainer>
   )
 }
 
