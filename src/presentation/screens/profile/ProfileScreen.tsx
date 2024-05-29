@@ -9,6 +9,8 @@ const ProfileScreen = () => {
   // const { name, email } = useProfileStore()
   const name = useProfileStore( state => state.name )
   const email = useProfileStore( state => state.email )
+  const changeProfile = useProfileStore( state => state.changeProfile )
+
 
   return (
     <View style={styles.container}>
@@ -27,6 +29,14 @@ const ProfileScreen = () => {
       >
         <Text>Cambiar Email</Text>
       </Pressable>
+
+      <Pressable 
+        style={styles.primaryButton}
+        onPress={() => changeProfile('Kevin', 'cuadro@gmail.com')}
+      >
+        <Text>Reset Data</Text>
+      </Pressable>
+
 
     </View>
   )
