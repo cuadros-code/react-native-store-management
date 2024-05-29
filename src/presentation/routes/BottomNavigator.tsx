@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Text } from 'react-native';
 import HomeScreen from '../screens/home/HomeScreen';
 import SettingScreen from '../screens/settings/SettingScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
-import { Text } from 'react-native';
 import { styles } from '../../config/app-theme';
 import { useCounterStore } from '../store/counter-store';
 
