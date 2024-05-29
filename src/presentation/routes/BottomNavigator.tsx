@@ -3,10 +3,15 @@ import HomeScreen from '../screens/home/HomeScreen';
 import SettingScreen from '../screens/settings/SettingScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 import { Text } from 'react-native';
+import { styles } from '../../config/app-theme';
+import { useCounterStore } from '../store/counter-store';
 
 const Tab = createBottomTabNavigator();
 
 const BottomNavigator = () => {
+
+  const counter = useCounterStore( state => state.counter )
+
   return (
     <Tab.Navigator>
       <Tab.Screen options={{
@@ -19,7 +24,8 @@ const BottomNavigator = () => {
       }} name="Profile" component={ProfileScreen} />
       <Tab.Screen options={{
         tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 16 }}>Settings</Text>,
-        tabBarLabel: () => <></>
+        tabBarLabel: () => <></>,
+        headerTitle:(props) => <Text style={styles.title}>Counter {counter}</Text>,
       }} name="Settings" component={SettingScreen} />
     </Tab.Navigator>
   )
